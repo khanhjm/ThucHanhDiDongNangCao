@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:id="@+id/lv_Alarm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" />
+
+    <Button
+        android:id="@+id/btn_Music"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@id/btn_Add"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/xxx"
+        android:gravity="center" />
+
+    <Button
+        android:id="@+id/btn_Add"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="25dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/round"
+        android:gravity="center"
+        android:text="@string/btnAdd"
+        android:textColor="@color/colorWhite"
+        android:textSize="30sp" />
+</RelativeLayout>

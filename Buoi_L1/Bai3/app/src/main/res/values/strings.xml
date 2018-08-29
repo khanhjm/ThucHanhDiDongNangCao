@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Báo thức</string>
+    <string name="btnStart">Start</string>
+    <string name="btnStop">Stop</string>
+    <string name="btnResume">Resume</string>
+    <string name="btnLap">Lap</string>
+    <string name="btnReset">Reset</string>
+    <string name="tv_time">00:00:00:000</string>
+    <string name="btnCancel">Cancel</string>
+    <string name="btnSave">Save</string>
+    <string name="btnAdd">+</string>
+    <string name="tvNhap">Nhập thời gian:</string>
+    <string name="edtDem">0000</string>
+</resources>
