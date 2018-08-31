@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -26,11 +27,17 @@ public class MainActivity extends Activity {
     }
 
     public void readWebpage(View view) {
-        DownloadWebPageTask task = new DownloadWebPageTask();
+        DownloadWebPageTask task = new DownloadWebPageTask(textView);
         task.execute(new String[]{"http://www.fithou.edu.vn"});
     }
 
     class DownloadWebPageTask extends AsyncTask<String, Void, String> {
+
+        TextView textView;
+        public DownloadWebPageTask(TextView tv) {
+            textView = tv;
+        }
+
         @Override
         protected String doInBackground(String... urls) {
             String response = "", s = "";
@@ -50,9 +57,9 @@ public class MainActivity extends Activity {
 
         @Override
         protected void onPostExecute(String result) {
-            TextView textView = (TextView) findViewById(R.id.TextView01);
+//            TextView textView = (TextView) findViewById(R.id.TextView01);
             textView.setMovementMethod(new ScrollingMovementMethod());
-            
+
 //            textView.setText(result);
 
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
