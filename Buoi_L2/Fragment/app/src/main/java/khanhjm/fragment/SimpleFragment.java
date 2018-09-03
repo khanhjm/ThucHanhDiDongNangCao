@@ -1,6 +1,6 @@
 package khanhjm.fragment;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -16,6 +16,13 @@ public class SimpleFragment extends Fragment {
 
     private static final int YES = 0;
     private static final int NO = 1;
+
+    public SimpleFragment() {
+    }
+
+    public static SimpleFragment newsInstance() {
+        return new SimpleFragment();
+    }
 
     @Nullable
     @Override

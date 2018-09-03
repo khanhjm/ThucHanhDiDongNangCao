@@ -10,4 +10,5 @@
     <dimen name="body_top_margin">20dp</dimen>
     <dimen name="margin_wide">16dp</dimen>
     <dimen name="dp20">20dp</dimen>
+    <dimen name="dp50">50dp</dimen>
 </resources>

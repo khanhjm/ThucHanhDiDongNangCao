@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,17 +7,21 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <fragment
-        android:id="@+id/fragment"
-        android:name="khanhjm.fragment.SimpleFragment"
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:name="SimpleFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_simple" />
+        tools:layout="@layout/fragment_simple">
+    </FrameLayout>
 
     <LinearLayout
+        android:id="@+id/image_content"
+        android:paddingTop="@dimen/dp50"
+        android:layout_marginTop="@dimen/dp50"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -26,24 +30,39 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/image_left_margin"
-            android:layout_marginTop="@dimen/dp20"
             app:srcCompat="@drawable/beatles_anthology_box" />
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:textColor="@android:color/holo_red_light"
-            android:layout_marginEnd="@dimen/margin_wide"
-            android:layout_marginLeft="@dimen/margin_wide"
-            android:layout_marginRight="@dimen/margin_wide"
-            android:layout_marginStart="@dimen/margin_wide"
-            android:text="@string/title1"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnOpen"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Open" />
+
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:layout_marginEnd="@dimen/margin_wide"
+                android:layout_marginLeft="@dimen/margin_wide"
+                android:layout_marginRight="@dimen/margin_wide"
+                android:layout_marginStart="@dimen/margin_wide"
+                android:gravity="center"
+                android:text="@string/title1"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/holo_red_light" />
+        </LinearLayout>
     </LinearLayout>
 
     <ScrollView
+        app:layout_constraintTop_toBottomOf="@id/image_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/standard_margin"
@@ -51,15 +70,17 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="@dimen/standard_margin">
 
+        <!--API 26 to justify text view-->
         <TextView
-            android:textAlignment="center"
+            android:justificationMode="inter_word"
             android:id="@+id/article"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/article1"
             android:padding="5dp"
+            android:text="@string/article1"
+            android:textAlignment="center"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="288dp" />
     </ScrollView>
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
